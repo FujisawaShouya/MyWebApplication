@@ -14,7 +14,7 @@
               <label for="title" class="col-md-4 col-form-label text-md-end">{{ __('ゲームタイトル') }}</label>
               <div class="col-md-6">
                 <input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title"
-                  value="{{ old('title') }}" required autocomplete="title" autofocus>
+                  value="{{ old('title') }}" required autocomplete="title" autofocus placeholder="例&#41; VALORANT">
                 {{-- @error('title')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
@@ -51,14 +51,26 @@
             <div class="row mb-3">
               <label for="comment" class="col-md-4 col-form-label text-md-end">コメント</label>
               <div class="col-md-6">
-                <textarea class="form-control" id="comment" rows="3" name="comment"></textarea>
+                <textarea class="form-control" id="comment" rows="6" name="comment" placeholder="例&#41; &#9675;&#9675;のランクを一緒に回してくれるフレンドを募集しています。&#13;&#10;今ランクは&#9675;&#9675;なのでそれ付近のプレイヤーでお願いします。&#13;&#10;年齢は問いません。気軽にフレンド登録してください!"></textarea>
               </div>
             </div>
             <div class="d-md-flex justify-content-md-end">
               <button type="submit" class="btn btn-outline-primary">検索</button>
             </div>
-          </div>
-        </form>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">{{ __('フレンド募集') }}</div>
+
+        <div class="card-body">
+        </div>
       </div>
     </div>
   </div>
