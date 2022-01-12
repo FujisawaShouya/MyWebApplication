@@ -17,5 +17,3 @@ use App\Http\Controllers\BoardController;
 Route::get('/', [BoardController::class, 'index']);
 
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
