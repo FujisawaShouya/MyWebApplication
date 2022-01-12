@@ -8,10 +8,10 @@
         <div class="card-header">{{ __('フレンド検索') }}</div>
 
         <div class="card-body">
-          <form action="/search" method="POST">
+          <form action="/search" method="GET">
             @csrf
             <div class="row mb-3">
-              <label for="title" class="col-md-4 col-form-label text-md-end">{{ __('ゲームタイトル') }}</label>
+              <label for="title" class="col-md-4 col-form-label text-md-end">{{ __('※ゲームタイトル') }}</label>
               <div class="col-md-6">
                 <input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title"
                   value="{{ old('title') }}" required autocomplete="title" autofocus placeholder="例&#41; VALORANT">
@@ -23,7 +23,7 @@
               </div>
             </div>
             <div class="row mb-3">
-              <label for="title" class="col-md-4 col-form-label text-md-end">{{ __('機種') }}</label>
+              <label for="title" class="col-md-4 col-form-label text-md-end">{{ __('※機種') }}</label>
               <div class="col-md-6">
                 <select class="form-select" aria-label="Default select example">
                   <option selected></option>
@@ -48,12 +48,6 @@
                 </select>
               </div>
             </div>
-            <div class="row mb-3">
-              <label for="comment" class="col-md-4 col-form-label text-md-end">コメント</label>
-              <div class="col-md-6">
-                <textarea class="form-control" id="comment" rows="6" name="comment" placeholder="例&#41; &#9675;&#9675;のランクを一緒に回してくれるフレンドを募集しています。&#13;&#10;今ランクは&#9675;&#9675;なのでそれ付近のプレイヤーでお願いします。&#13;&#10;年齢は問いません。気軽にフレンド登録してください!"></textarea>
-              </div>
-            </div>
             <div class="d-md-flex justify-content-md-end">
               <button type="submit" class="btn btn-outline-primary">検索</button>
             </div>
@@ -70,6 +64,18 @@
         <div class="card-header">{{ __('フレンド募集') }}</div>
 
         <div class="card-body">
+          <div class="row mb-3">
+              <form action="/create" method="POST">
+                <div class="row mb-3">
+                  <label for="comment" class="col-md-4 col-form-label text-md-end">コメント</label>
+                  <div class="col-md-6">
+                    <textarea class="form-control" id="comment" rows="6" name="comment"
+                      placeholder="例&#41; &#9675;&#9675;のランクを一緒に回してくれるフレンドを募集しています。&#13;&#10;今ランクは&#9675;&#9675;なのでそれ付近のプレイヤーでお願いします。&#13;&#10;年齢は問いません。気軽にフレンド登録してください!"></textarea>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </div>
