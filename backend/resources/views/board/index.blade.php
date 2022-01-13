@@ -26,7 +26,7 @@
             <div class="row mb-3">
               <label for="title" class="col-md-4 col-form-label text-md-end">{{ __('※機種') }}</label>
               <div class="col-md-6">
-                <select class="form-select" aria-label="Default select example">
+                <select class="form-select" aria-label="Default select example" name="s-pratform">
                   <option selected></option>
                   <option value="s-pc">PC</option>
                   <option value="s-ps">PS4/PS5</option>
@@ -39,7 +39,7 @@
             <div class="row mb-3">
               <label for="time" class="col-md-4 col-form-label text-md-end">{{ __('投稿時間') }}</label>
               <div class="col-md-6">
-                <select class="form-select" aria-label="Default select example">
+                <select class="form-select" aria-label="Default select example" name="s-time">
                   <option selected></option>
                   <option value="s-1">30分以内</option>
                   <option value="s-2">1時間以内</option>
@@ -81,7 +81,7 @@
               <div class="row mb-3">
                 <label for="title" class="col-md-4 col-form-label text-md-end">{{ __('※機種') }}</label>
                 <div class="col-md-6">
-                  <select class="form-select" aria-label="Default select example">
+                  <select class="form-select" aria-label="Default select example" name="platform">
                     <option selected></option>
                     <option value="pc">PC</option>
                     <option value="ps">PS4/PS5</option>
