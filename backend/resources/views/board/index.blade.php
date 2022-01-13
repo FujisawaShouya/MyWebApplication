@@ -71,11 +71,11 @@
                 <div class="col-md-6">
                   <input id="title" type="text" class="form-control @error('title') is-invalid @enderror"
                     name="title" value="{{ old('title') }}" placeholder="例&#41; VALORANT">
-                  {{-- @error('title')
+                  @error('title')
                   <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                   </span>
-                  @enderror --}}
+                  @enderror
                 </div>
               </div>
               <div class="row mb-3">
@@ -89,6 +89,11 @@
                     <option value="phone">スマホ</option>
                     <option value="xbox">XboxOne</option>
                   </select>
+                  @error('platform')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                  @enderror
                 </div>
               </div>
               <div class="row mb-3">
