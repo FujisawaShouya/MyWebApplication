@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Board extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'id',
+        'user_id',
+        'title',
+        'platform',
+        'player',
+        'comment'
+    ];
 }
