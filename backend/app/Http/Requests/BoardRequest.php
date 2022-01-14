@@ -28,8 +28,10 @@ class BoardRequest extends FormRequest
     }
 
     public function messages() {
-        'title.required' => 'ゲームタイトルを記入してください',
-        'title.max' => 'ゲームタイトルは30文字以内で記入してください',
-        'platform.required' => '機種を選択してください'
+        return [
+            'title.required' => 'ゲームタイトルを記入してください',
+            'title.max' => 'ゲームタイトルは30文字以内で記入してください',
+            'platform.required' => '機種を選択してください'
+        ];
     }
 }
