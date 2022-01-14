@@ -14,7 +14,7 @@
               <label for="title" class="col-md-4 col-form-label text-md-end">{{ __('※ゲームタイトル') }}</label>
               <div class="col-md-6">
                 <input id="searched-title" type="text"
-                  class="form-control @error('searched-title') is-invalid @enderror" name="searched-title"
+                  class="form-control @error('searched-title') is-invalid @enderror" name="searched_title"
                   value="{{ old('searched-title') }}" autocomplete="searched-title" placeholder="例&#41; VALORANT">
                 {{-- @error('searched-title')
                 <span class="invalid-feedback" role="alert">
@@ -26,26 +26,26 @@
             <div class="row mb-3">
               <label for="title" class="col-md-4 col-form-label text-md-end">{{ __('※機種') }}</label>
               <div class="col-md-6">
-                <select class="form-select" aria-label="Default select example" name="s-pratform">
+                <select class="form-select" aria-label="Default select example" name="searched_platform">
                   <option selected></option>
-                  <option value="s-pc">PC</option>
-                  <option value="s-ps">PS4/PS5</option>
-                  <option value="s-switch">Switch</option>
-                  <option value="s-phone">スマホ</option>
-                  <option value="s-xbox">XboxOne</option>
+                  <option value="pc">PC</option>
+                  <option value="ps">PS4/PS5</option>
+                  <option value="switch">Switch</option>
+                  <option value="phone">スマホ</option>
+                  <option value="xbox">XboxOne</option>
                 </select>
               </div>
             </div>
             <div class="row mb-3">
               <label for="time" class="col-md-4 col-form-label text-md-end">{{ __('投稿時間') }}</label>
               <div class="col-md-6">
-                <select class="form-select" aria-label="Default select example" name="s-time">
+                <select class="form-select" aria-label="Default select example" name="searched_time">
                   <option selected></option>
-                  <option value="s-1">30分以内</option>
-                  <option value="s-2">1時間以内</option>
-                  <option value="s-3">今日まで</option>
-                  <option value="s-4">昨日まで</option>
-                  <option value="s-5">昨日より前</option>
+                  <option value="1">30分以内</option>
+                  <option value="2">1時間以内</option>
+                  <option value="3">今日まで</option>
+                  <option value="4">昨日まで</option>
+                  <option value="5">昨日より前</option>
                 </select>
               </div>
             </div>
