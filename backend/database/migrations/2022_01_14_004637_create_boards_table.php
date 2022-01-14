@@ -15,6 +15,11 @@ class CreateBoardsTable extends Migration
     {
         Schema::create('boards', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users');
+            $table->string('title');
+            $table->string('platform');
+            $table->string('player')->nullable();
+            $table->string('comment')->nullable();
             $table->timestamps();
         });
     }
