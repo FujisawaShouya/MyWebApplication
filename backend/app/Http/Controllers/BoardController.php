@@ -30,4 +30,15 @@ class BoardController extends Controller
 
         return redirect('/');
     }
+
+    public function search(Request $request) {
+        
+
+        $boards = Board::where('title', 'LIKE',"%{$request->searched_title}%")
+                        ->where('platform', 'LIKE', "%{$request->searched_platform}%")
+                        ->latest()
+                        ->get();
+
+        return view('board.search', ['boards' => $boards]);
+    }
 }
