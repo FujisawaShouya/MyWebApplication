@@ -15,5 +15,6 @@ use App\Http\Controllers\BoardController;
 */
 
 Route::get('/', [BoardController::class, 'index']);
+Route::post('/create', [BoardController::class, 'create']);
 
 Auth::routes();
