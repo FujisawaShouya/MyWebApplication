@@ -28,11 +28,11 @@
               <div class="col-md-6">
                 <select class="form-select" aria-label="Default select example" name="searched_platform">
                   <option selected></option>
-                  <option value="pc">PC</option>
-                  <option value="ps">PS4/PS5</option>
-                  <option value="switch">Switch</option>
-                  <option value="phone">スマホ</option>
-                  <option value="xbox">XboxOne</option>
+                  <option value="PC">PC</option>
+                  <option value="PS4/PS5">PS4/PS5</option>
+                  <option value="Switch">Switch</option>
+                  <option value="スマホ">スマホ</option>
+                  <option value="XboxOne">XboxOne</option>
                 </select>
               </div>
             </div>
@@ -43,9 +43,9 @@
                   <option selected></option>
                   <option value="1">30分以内</option>
                   <option value="2">1時間以内</option>
-                  <option value="3">今日まで</option>
-                  <option value="4">昨日まで</option>
-                  <option value="5">昨日より前</option>
+                  <option value="3">24時間以内</option>
+                  <option value="4">48時間以内</option>
+                  <option value="5">それ以降</option>
                 </select>
               </div>
             </div>
@@ -84,11 +84,11 @@
                 <div class="col-md-6">
                   <select class="form-select" aria-label="Default select example" name="platform">
                     <option selected></option>
-                    <option value="pc">PC</option>
-                    <option value="ps">PS4/PS5</option>
-                    <option value="switch">Switch</option>
-                    <option value="phone">スマホ</option>
-                    <option value="xbox">XboxOne</option>
+                    <option value="PC">PC</option>
+                    <option value="PS4/PS5">PS4/PS5</option>
+                    <option value="Switch">Switch</option>
+                    <option value="スマホ">スマホ</option>
+                    <option value="XboxOne">XboxOne</option>
                   </select>
                   @error('platform')
                   <span class="invalid-feedback" role="alert">
