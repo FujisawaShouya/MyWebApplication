@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\BoardRequest;
 use App\Models\Board;
+use App\Models\User;
 use Carbon\Carbon;
 
 class BoardController extends Controller
