@@ -58,18 +58,27 @@
     </div>
   </div>
 </div>
-<div class="container">
+<div class="container mt-4">
   <div class="row justify-content-center">
     <div class="col-md-8">
-      <div>
+      <div class="card card-body " style="width: 54rem;">
         @foreach ($boards as $board)
-            
+        @foreach ($users as $user)
+          <table class="table">
+            <tr>
+              <td style="width: 50%">
+                <p>{{ $user->name }}</p>
+                <button>フレンドになる</button>
+              </td>
+              <td>
+                <h5>{{ $board->title }} （{{ $board->platform }}）</h5>
+                <p>{{ $board->player }}</p>
+                <p>{{ $board->comment }}</p>
+              </td>
+            </tr>
+          </table>
         @endforeach
-      </div>
-      <div class="card card-body" style="width: 54rem;">
-        <h5 class="card-title">カードのタイトル</h5>
-        <p class="card-text">以下のテキストを追加のコンテンツへの自然な導入としてサポート。</p>
-        <a href="#" class="btn btn-primary">ボタン</a>
+        @endforeach
       </div>
     </div>
   </div>
