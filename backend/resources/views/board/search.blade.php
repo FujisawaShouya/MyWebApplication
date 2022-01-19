@@ -68,7 +68,37 @@
             <tr>
               <td style="width: 50%">
                 <p>{{ $user->name }}</p>
-                <button>フレンドになる</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  Launch demo modal
+                </button>
+                
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">フレンドになりますか？</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="row mb-3">
+                          <h5 class="col-md-4 text-md-end">ゲームタイトル :</h5>
+                          <p class="col-md-6 align-middle">{{ $board->title }}</p>
+                          <h5 class="col-md-4 text-md-end">機種 :</h5>
+                          <p class="col-md-6 align-middle">{{ $board->platform }}</p>
+                          <h5 class="col-md-4 text-md-end">プレイヤーID :</h5>
+                          <p class="col-md-6 align-middle">{{ $board->player }}</p>
+                          <h5 class="col-md-4 text-md-end">DiscordID :</h5>
+                          <p class="col-md-6 align-middle">{{ $user->discord_id }}</p>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </td>
               <td>
                 <h5>{{ $board->title }} （{{ $board->platform }}）</h5>
