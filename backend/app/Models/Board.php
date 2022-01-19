@@ -17,4 +17,9 @@ class Board extends Model
         'player',
         'comment'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
