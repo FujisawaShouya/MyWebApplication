@@ -66,9 +66,9 @@
           <table class="table">
             <tr>
               <td style="width: 50%">
-                <p>{{ $board->user->name }}</p>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                  Launch demo modal
+                <p>{{ $board->user->name }} さん</p>
+                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  フレンドになる
                 </button>
                 
                 <!-- Modal -->
@@ -92,12 +92,13 @@
                         </div>
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">キャンセル</button>
+                        <button type="button" class="btn btn-primary">フレンドになる</button>
                       </div>
                     </div>
                   </div>
                 </div>
+                <!-- EndModal -->
               </td>
               <td>
                 <h5>{{ $board->title }} （{{ $board->platform }}）</h5>
