@@ -63,11 +63,10 @@
     <div class="col-md-8">
       <div class="card card-body " style="width: 54rem;">
         @foreach ($boards as $board)
-        @foreach ($users as $user)
           <table class="table">
             <tr>
               <td style="width: 50%">
-                <p>{{ $user->name }}</p>
+                <p>{{ $board->user->name }}</p>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                   Launch demo modal
                 </button>
@@ -89,7 +88,7 @@
                           <h5 class="col-md-4 text-md-end">プレイヤーID :</h5>
                           <p class="col-md-6 align-middle">{{ $board->player }}</p>
                           <h5 class="col-md-4 text-md-end">DiscordID :</h5>
-                          <p class="col-md-6 align-middle">{{ $user->discord_id }}</p>
+                          <p class="col-md-6 align-middle">{{ $board->user->discord_id }}</p>
                         </div>
                       </div>
                       <div class="modal-footer">
@@ -107,7 +106,6 @@
               </td>
             </tr>
           </table>
-        @endforeach
         @endforeach
       </div>
     </div>
