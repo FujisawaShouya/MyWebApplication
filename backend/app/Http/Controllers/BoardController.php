@@ -44,14 +44,7 @@ class BoardController extends Controller
                         ->where('platform', 'LIKE', "%{$request->searched_platform}%")
                         ->latest()
                         ->get();
-            $users_id =  Board::where('title', 'LIKE',"%{$request->searched_title}%")
-                        ->where('created_at', '>=', $added_time)
-                        ->where('platform', 'LIKE', "%{$request->searched_platform}%")
-                        ->latest()
-                        ->pluck('user_id');
-            $users = User::whereIn('id', $users_id)->get();
-
-            return view('board.search', compact('boards', 'users'));
+            return view('board.search', compact('boards'));
         } elseif ($searched_time == 2) {
             $added_time = $now->subHours(1);
             $boards = Board::where('title', 'LIKE',"%{$request->searched_title}%")
@@ -59,15 +52,7 @@ class BoardController extends Controller
                         ->where('platform', 'LIKE', "%{$request->searched_platform}%")
                         ->latest()
                         ->get();
-            $users_id =  Board::where('title', 'LIKE',"%{$request->searched_title}%")
-                        ->where('created_at', '>=', $added_time)
-                        ->where('platform', 'LIKE', "%{$request->searched_platform}%")
-                        ->latest()
-                        ->pluck('user_id');
-            $users = User::whereIn('id', $users_id)->get();
-
-            return view('board.search', compact('boards', 'users'));
-
+            return view('board.search', compact('boards'));
         } elseif($searched_time == 3) {
             $added_time = $now->subDays(1);
             $boards = Board::where('title', 'LIKE',"%{$request->searched_title}%")
@@ -75,14 +60,7 @@ class BoardController extends Controller
                         ->where('platform', 'LIKE', "%{$request->searched_platform}%")
                         ->latest()
                         ->get();
-            $users_id =  Board::where('title', 'LIKE',"%{$request->searched_title}%")
-                        ->where('created_at', '>=', $added_time)
-                        ->where('platform', 'LIKE', "%{$request->searched_platform}%")
-                        ->latest()
-                        ->pluck('user_id');
-            $users = User::whereIn('id', $users_id)->get();
-
-            return view('board.search', compact('boards', 'users'));
+            return view('board.search', compact('boards'));
         } elseif ($searched_time == 4) {
             $added_time = $now->subDays(2);
             $boards = Board::where('title', 'LIKE',"%{$request->searched_title}%")
@@ -90,14 +68,7 @@ class BoardController extends Controller
                         ->where('platform', 'LIKE', "%{$request->searched_platform}%")
                         ->latest()
                         ->get();
-            $users_id =  Board::where('title', 'LIKE',"%{$request->searched_title}%")
-                        ->where('created_at', '>=', $added_time)
-                        ->where('platform', 'LIKE', "%{$request->searched_platform}%")
-                        ->latest()
-                        ->pluck('user_id');
-            $users = User::whereIn('id', $users_id)->get();
-
-            return view('board.search', compact('boards', 'users'));
+            return view('board.search', compact('boards'));
         } elseif($searched_time == 5) {
             $added_time = $now->subDays(2);
             $boards = Board::where('title', 'LIKE',"%{$request->searched_title}%")
@@ -105,26 +76,13 @@ class BoardController extends Controller
                         ->where('platform', 'LIKE', "%{$request->searched_platform}%")
                         ->latest()
                         ->get();
-            $users_id =  Board::where('title', 'LIKE',"%{$request->searched_title}%")
-                        ->where('created_at', '>=', $added_time)
-                        ->where('platform', 'LIKE', "%{$request->searched_platform}%")
-                        ->latest()
-                        ->pluck('user_id');
-            $users = User::whereIn('id', $users_id)->get();
-
-            return view('board.search', compact('boards', 'users'));
+            return view('board.search', compact('boards'));
         } else {
             $boards = Board::where('title', 'LIKE',"%{$request->searched_title}%")
                         ->where('platform', 'LIKE', "%{$request->searched_platform}%")
                         ->latest()
                         ->get();
-            $users_id =  Board::where('title', 'LIKE',"%{$request->searched_title}%")
-                        ->where('platform', 'LIKE', "%{$request->searched_platform}%")
-                        ->latest()
-                        ->pluck('user_id');
-            $users = User::whereIn('id', $users_id)->get();
-
-            return view('board.search', compact('boards', 'users'));
+            return view('board.search', compact('boards'));
         };
     }
 }
