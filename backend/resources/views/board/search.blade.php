@@ -103,7 +103,7 @@
               <td>
                 <h5>{{ $board->title }} （{{ $board->platform }}）</h5>
                 <p>{{ $board->player }}</p>
-                <p>{{ $board->comment }}</p>
+                <p style="white-space:pre-wrap;">{{ $board->comment }}</p>
               </td>
             </tr>
           </table>
