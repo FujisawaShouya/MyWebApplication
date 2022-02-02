@@ -93,7 +93,9 @@
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">キャンセル</button>
-                        <button type="button" class="btn btn-primary">フレンドになる</button>
+                        <form action="/mypage" method="GET">
+                          <button type="submit" class="btn btn-primary">フレンドになる</button>
+                        </form>
                       </div>
                     </div>
                   </div>
@@ -101,6 +103,7 @@
                 <!-- EndModal -->
               </td>
               <td>
+                <input type="hidden" id="id" value="{{ $board->id }}">
                 <h5>{{ $board->title }} （{{ $board->platform }}）</h5>
                 <p>{{ $board->player }}</p>
                 <p style="white-space:pre-wrap;">{{ $board->comment }}</p>
