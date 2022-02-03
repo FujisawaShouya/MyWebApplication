@@ -63,53 +63,23 @@
     <div class="col-md-8">
       <div class="card card-body " style="width: 54rem;">
         @foreach ($boards as $board)
-          <table class="table">
-            <tr>
-              <td style="width: 50%">
-                <p>{{ $board->user->name }} さん</p>
-                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                  フレンドになる
-                </button>
-                
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">フレンドになりますか？</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body">
-                        <div class="row mb-3">
-                          <h5 class="col-md-4 text-md-end">ゲームタイトル :</h5>
-                          <p class="col-md-6 align-middle">{{ $board->title }}</p>
-                          <h5 class="col-md-4 text-md-end">機種 :</h5>
-                          <p class="col-md-6 align-middle">{{ $board->platform }}</p>
-                          <h5 class="col-md-4 text-md-end">プレイヤーID :</h5>
-                          <p class="col-md-6 align-middle">{{ $board->player }}</p>
-                          <h5 class="col-md-4 text-md-end">DiscordID :</h5>
-                          <p class="col-md-6 align-middle">{{ $board->user->discord_id }}</p>
-                        </div>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">キャンセル</button>
-                        <form action="/mypage" method="GET">
-                          <button type="submit" class="btn btn-primary">フレンドになる</button>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- EndModal -->
-              </td>
-              <td>
-                <input type="hidden" id="id" value="{{ $board->id }}">
-                <h5>{{ $board->title }} （{{ $board->platform }}）</h5>
-                <p>{{ $board->player }}</p>
-                <p style="white-space:pre-wrap;">{{ $board->comment }}</p>
-              </td>
-            </tr>
-          </table>
+            <table class="table">
+              <tr>
+                <td style="width: 50%">
+                  <p>{{ $board->user->name }} さん</p>
+                  <form action="/comfirm" method="GET">
+                    @csrf
+                    <input type="hidden" name="id" value="{{ $board->id }}">
+                    <button type="submit" class="btn btn-outline-primary">フレンドになる</button>
+                  </form>
+                </td>
+                <td>
+                  <h5>{{ $board->title }} （{{ $board->platform }}）</h5>
+                  <p>{{ $board->player }}</p>
+                  <p style="white-space:pre-wrap;">{{ $board->comment }}</p>
+                </td>
+              </tr>
+            </table>
         @endforeach
       </div>
     </div>

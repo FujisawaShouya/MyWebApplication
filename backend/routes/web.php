@@ -17,5 +17,7 @@ use App\Http\Controllers\BoardController;
 Route::get('/', [BoardController::class, 'index']);
 Route::post('/create', [BoardController::class, 'create']);
 Route::get('/search', [BoardController::class, 'search']);
+Route::get('/comfirm', [BoardController::class, 'comfirm']);
+Route::post('/comfirm', [BoardController::class, 'comfirm']);
 
 Auth::routes();

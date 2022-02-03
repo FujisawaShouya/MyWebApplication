@@ -85,4 +85,9 @@ class BoardController extends Controller
             return view('board.search', compact('boards'));
         };
     }
+
+    public function comfirm(Request $request) {
+        $comfirms = Board::where('id', $request->id)->get();
+        return view('board.comfirm', compact('comfirms'));
+    }
 }
