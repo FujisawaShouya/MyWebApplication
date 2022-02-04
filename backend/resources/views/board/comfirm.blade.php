@@ -11,7 +11,7 @@
               <td style="width: 50%">
                 <p>{{ $comfirm->user->name }} さん</p>
                 <h5>DiscordIDはボタンを押すと表示されます</h5>
-                <form action="/mypage" action="GET">
+                <form action="/complete" action="GET">
                   <input type="hidden" name="id" value="{{ $comfirm->id }}">
                   <button type="submit" class="btn btn-outline-primary">フレンドになる</button>
                 </form>

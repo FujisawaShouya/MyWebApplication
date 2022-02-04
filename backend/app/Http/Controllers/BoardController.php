@@ -90,4 +90,9 @@ class BoardController extends Controller
         $comfirms = Board::where('id', $request->id)->get();
         return view('board.comfirm', compact('comfirms'));
     }
+
+    public function complete(Request $request) {
+        $boards = Board::where('id', $request->id)->get();
+        return view('board.complete', compact('boards'));
+    }
 }
