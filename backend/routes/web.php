@@ -19,5 +19,6 @@ Route::post('/create', [BoardController::class, 'create']);
 Route::get('/search', [BoardController::class, 'search']);
 Route::get('/comfirm', [BoardController::class, 'comfirm']);
 Route::get('/complete', [BoardController::class, 'complete']);
+Route::get('/guestLogin', [BoardController::class, 'guestLogin']);
 
 Auth::routes();
