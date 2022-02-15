@@ -59,6 +59,15 @@
                             </div>
                         </div>
                     </form>
+                    <form action="/guestLogin" method="GET">
+                        <div class="row mb-0 mt-3">
+                            <div class="col-md-8 offset-md-4">
+                                <button type="submit" class="btn btn-success">
+                                    {{ __('ゲストログイン') }}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
