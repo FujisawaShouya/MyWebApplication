@@ -19,6 +19,17 @@ class BoardController extends Controller
         }
     }
 
+    public function guestLogin() {
+        $email = 'guest@example.com';
+        $password = 'aaaaaaaa';
+
+        if(Auth::attempt(['email' => $email, 'password' => $password])) {
+            return view('board.index');
+        }
+
+        return redirect('/');
+    }
+
     public function create(BoardRequest $request) {
         $user = Auth::user();
         $board = Board::create([
