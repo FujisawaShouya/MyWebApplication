@@ -8,6 +8,7 @@ use App\Http\Requests\BoardRequest;
 use App\Models\Board;
 use App\Models\User;
 use Carbon\Carbon;
+use Illuminate\Pagination\Paginator;
 
 class BoardController extends Controller
 {
@@ -61,38 +62,33 @@ class BoardController extends Controller
             $boards = Board::where('title', 'LIKE',"%{$request->searched_title}%")
                         ->where('created_at', '>=', $added_time)
                         ->where('platform', 'LIKE', "%{$request->searched_platform}%")
-                        ->latest()
-                        ->get();
+                        ->paginate(10);
             return view('board.search', compact('boards'));
         } elseif($searched_time == 3) {
             $added_time = $now->subDays(1);
             $boards = Board::where('title', 'LIKE',"%{$request->searched_title}%")
                         ->where('created_at', '>=', $added_time)
                         ->where('platform', 'LIKE', "%{$request->searched_platform}%")
-                        ->latest()
-                        ->get();
+                        ->paginate(10);
             return view('board.search', compact('boards'));
         } elseif ($searched_time == 4) {
             $added_time = $now->subDays(2);
             $boards = Board::where('title', 'LIKE',"%{$request->searched_title}%")
                         ->where('created_at', '>=', $added_time)
                         ->where('platform', 'LIKE', "%{$request->searched_platform}%")
-                        ->latest()
-                        ->get();
+                        ->paginate(10);
             return view('board.search', compact('boards'));
         } elseif($searched_time == 5) {
             $added_time = $now->subDays(2);
             $boards = Board::where('title', 'LIKE',"%{$request->searched_title}%")
                         ->where('created_at', '<', $added_time)
                         ->where('platform', 'LIKE', "%{$request->searched_platform}%")
-                        ->latest()
-                        ->get();
+                        ->paginate(10);
             return view('board.search', compact('boards'));
         } else {
             $boards = Board::where('title', 'LIKE',"%{$request->searched_title}%")
                         ->where('platform', 'LIKE', "%{$request->searched_platform}%")
-                        ->latest()
-                        ->get();
+                        ->paginate(10);
             return view('board.search', compact('boards'));
         };
     }
