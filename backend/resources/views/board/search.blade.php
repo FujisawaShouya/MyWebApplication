@@ -81,6 +81,7 @@
               </tr>
             </table>
         @endforeach
+        {{ $boards->render('pagination::bootstrap-4') }}
       </div>
     </div>
   </div>
